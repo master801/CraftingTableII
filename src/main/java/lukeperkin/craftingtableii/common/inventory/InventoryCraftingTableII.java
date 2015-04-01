@@ -1,21 +1,18 @@
-package lukeperkin.craftingtableii;
+package lukeperkin.craftingtableii.common.inventory;
 
-import net.minecraft.src.IRecipe;
-import net.minecraft.src.InventoryBasic;
-import net.minecraft.src.ItemStack;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipe;
 
-public class InventoryCraftingTableII {
+public final class InventoryCraftingTableII {
 	
 	private IRecipe[] recipes;
-	private int recipesLength;
-	
+
 	public InventoryCraftingTableII(int i)
     {
-		recipesLength = i;
-		recipes = new IRecipe[recipesLength];
+		recipes = new IRecipe[i];
     }
 	
-	public int getSize()
+	public int nextEmptySlot()
 	{
 		for(int i = 0; i < recipes.length; i++) {
 			if(recipes[i] == null)
@@ -27,11 +24,11 @@ public class InventoryCraftingTableII {
 	
 	public boolean addRecipe(IRecipe irecipe)
 	{
-		int size = getSize();
-		if(size >= recipesLength || irecipe == null)
+		int empty = nextEmptySlot();
+		if(empty >= recipes.length || irecipe == null) {
 			return false;
-		
-		recipes[size] = irecipe;
+		}
+		recipes[empty] = irecipe;
 		return true;
 	}
 	
@@ -43,13 +40,20 @@ public class InventoryCraftingTableII {
 	public ItemStack getRecipeOutput(int i)
 	{
 		if(recipes[i] != null)
+		{
 			return recipes[i].getRecipeOutput().copy();
+		}
 		else
+		{
 			return null;
+		}
 	}
 	
-	public void clearRecipes() {
+	public void clearRecipes()
+	{
+		int length = recipes.length;
 		recipes = null;
-		recipes = new IRecipe[recipesLength];
+		recipes = new IRecipe[length];
 	}
+
 }

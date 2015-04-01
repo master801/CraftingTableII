@@ -1,23 +1,6 @@
 package net.minecraft.src;
 
-import java.io.*;
-import java.lang.reflect.Field;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-
-import lukeperkin.craftingtableii.BlockClevercraft;
-import lukeperkin.craftingtableii.ContainerClevercraft;
-import lukeperkin.craftingtableii.GuiClevercraft;
-import lukeperkin.craftingtableii.RenderCraftingTableII;
-
-import org.lwjgl.opengl.GL11;
-
-import net.minecraft.client.Minecraft;
-import net.minecraft.src.forge.ICraftingHandler;
-import net.minecraft.src.forge.MinecraftForge;
-import au.com.bytecode.opencsv.CSVReader;
-
+/*
 public class mod_Clevercraft extends BaseModMp {
 	
 	@MLProp public static int blockIDCraftingTableII = 235; 
@@ -63,8 +46,8 @@ public class mod_Clevercraft extends BaseModMp {
 		});
 		
 		// Setup block render.
-		RenderCraftingTableII render = new RenderCraftingTableII();
-		ModLoader.RegisterTileEntity(lukeperkin.craftingtableii.TileEntityCraftingTableII.class, "craftingtableII", render);
+		TileEntityRendererCraftingTableII render = new TileEntityRendererCraftingTableII();
+		ModLoader.RegisterTileEntity(TileEntityCraftingTableII.class, "craftingtableII", render);
 
 		ModLoaderMp.RegisterGUI(this, guiIDCraftingTableII);
 		
@@ -190,3 +173,4 @@ public class mod_Clevercraft extends BaseModMp {
 	}
 
 }
+*/
