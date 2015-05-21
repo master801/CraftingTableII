@@ -26,8 +26,8 @@ public final class ItemBlockClevercraft extends ItemBlockCoreBase {
         final List<String> list = new ArrayList<String>();
         list.add("The crafting table of awesomeness that you are using right now! No need to remember fiddly recipe patterns, the");
         list.add("Crafting Table II will figure it out all for you.");
-        list.add("");
-        list.add("");
+        list.add("");//New line
+        list.add("");//New line
         list.add("Shift click to craft as much of that item as possible.");
         return list;
     }

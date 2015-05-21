@@ -1,5 +1,6 @@
 package lukeperkin.craftingtableii.proxies;
 
+import corelibrary.api.common.mod.IMod;
 import corelibrary.proxies.AbstractProxy;
 import cpw.mods.fml.relauncher.Side;
 import lukeperkin.craftingtableii.Clevercraft;
@@ -9,10 +10,6 @@ import lukeperkin.craftingtableii.Clevercraft;
  * @author Master801
  */
 public final class ServerProxy extends AbstractProxy {
-
-    public ServerProxy() {
-        super(Clevercraft.instance, Side.SERVER);
-    }
 
     @Override
     public void registerBlockRenderers() {
@@ -24,6 +21,16 @@ public final class ServerProxy extends AbstractProxy {
 
     @Override
     public void registerItemRenderers() {
+    }
+
+    @Override
+    public Side getSide() {
+        return Side.SERVER;
+    }
+
+    @Override
+    public IMod getOwningMod() {
+        return Clevercraft.instance;
     }
 
 }

@@ -2,7 +2,6 @@ package lukeperkin.craftingtableii.client.renderers.tileentity;
 
 import corelibrary.client.renderer.tileentity.TileEntityRendererCoreBase;
 import corelibrary.common.resources.CoreResources;
-import corelibrary.helpers.RotationHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import lukeperkin.craftingtableii.client.models.ModelCraftingTableII;
@@ -27,8 +26,8 @@ public class TileEntityRendererCraftingTableII extends TileEntityRendererCoreBas
 		if (tile instanceof TileEntityCraftingTableII) {
 			TileEntityCraftingTableII craftingTableII = (TileEntityCraftingTableII)tile;
 			GL11.glPushMatrix();
-			GL11.glTranslated(xCoord + 0.5D, xCoord + 0.5D, xCoord + 0.5D);
-			GL11.glRotatef(270.0F - (RotationHelper.convertForgeDirectionToByte(craftingTableII.getFacingDirection()) * 90.0F), 0.0F, 1.0F, 1.0F);
+//			GL11.glTranslated(xCoord + 0.5D, xCoord + 0.5D, xCoord + 0.5D);
+//			GL11.glRotatef(270.0F - (craftingTableII.getFacingDirection().ordinal() * 90.0F), 0.0F, 1.0F, 1.0F);
 			CoreResources.getTextureManager().bindTexture(TileEntityRendererCraftingTableII.CRAFTING_TABLE_II_RESOURCE_LOCTION);
 			GL11.glScalef(-1.0F, -1.0F, -1.0F);
 			model.render(null, craftingTableII.doorAngle, 0.0F, -0.1F, 0.0F, 0.0F, 0.0625F);

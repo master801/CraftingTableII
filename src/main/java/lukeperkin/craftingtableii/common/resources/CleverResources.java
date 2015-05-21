@@ -9,7 +9,7 @@ import lukeperkin.craftingtableii.blocks.BlockClevercraft;
  */
 public final class CleverResources {
 
-    public static final String CRAFTING_TABLE_II_MOD_ID = "Clevercraft";
+    public static final String CRAFTING_TABLE_II_MOD_ID = "Clevercraft", CRAFTING_TABLE_II_NAME = "Crafting Table II", CRAFTING_TABLE_II_VERSION = "@VERSION@", CRAFTING_TABLE_II_DEPENDENCIES = "required-after:801-Library";
 
     public static final BlockCoreBase BLOCK_CLEVERCRAFT = new BlockClevercraft();
 
